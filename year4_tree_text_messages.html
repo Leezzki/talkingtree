@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nature Discovery News - Can Trees Send Text Messages?</title>
+
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f8f2;
+    color: #24323f;
+    line-height: 1.5;
+  }
+
+  header {
+    background: #2f7d4a;
+    color: white;
+    padding: 18px 24px;
+  }
+
+  .header-inner {
+    max-width: 1050px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .brand-icon {
+    font-size: 46px;
+  }
+
+  .brand h1 {
+    margin: 0;
+    font-size: 30px;
+  }
+
+  .brand p {
+    margin: 2px 0 0;
+    font-size: 15px;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 18px;
+  }
+
+  main {
+    max-width: 1050px;
+    margin: 28px auto;
+    padding: 0 20px 40px;
+  }
+
+  .hero {
+    background: white;
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  }
+
+  .tag {
+    display: inline-block;
+    background: #d9ef9f;
+    color: #365218;
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 999px;
+    margin-bottom: 12px;
+  }
+
+  h2 {
+    margin: 0 0 12px;
+    font-size: 40px;
+    line-height: 1.08;
+    color: #173322;
+  }
+
+  .intro {
+    font-size: 20px;
+    max-width: 800px;
+  }
+
+  .big-claim {
+    margin: 24px 0;
+    padding: 18px 22px;
+    background: #edf9ef;
+    border-left: 6px solid #3d9a5c;
+    border-radius: 10px;
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+  .news-image {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 16px;
+    display: block;
+    margin-top: 24px;
+  }
+
+  .caption {
+    margin-top: 8px;
+    color: #667567;
+    font-size: 14px;
+  }
+
+  .section {
+    margin-top: 30px;
+  }
+
+  .section h3 {
+    margin-bottom: 8px;
+    font-size: 26px;
+    color: #1f5d38;
+  }
+
+  .section p {
+    font-size: 18px;
+    margin-top: 8px;
+  }
+
+  .messages {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 18px;
+  }
+
+  .message-card {
+    background: #eef8ff;
+    border-radius: 16px;
+    padding: 22px;
+    font-size: 20px;
+    font-weight: bold;
+    border: 1px solid #cfe4ef;
+  }
+
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 24px;
+  }
+
+  .fact {
+    background: #f7faf5;
+    padding: 22px;
+    border-radius: 16px;
+    border: 1px solid #e0eadc;
+  }
+
+  .fact .emoji {
+    font-size: 36px;
+  }
+
+  .fact h4 {
+    margin: 8px 0 6px;
+    font-size: 20px;
+  }
+
+  .fact p {
+    margin: 0;
+    font-size: 17px;
+  }
+
+  .mini-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 28px;
+  }
+
+  .mini-gallery .news-image {
+    height: 230px;
+    margin-top: 0;
+  }
+
+  .quote {
+    margin-top: 28px;
+    background: #fff4d9;
+    border-radius: 16px;
+    padding: 24px;
+    font-size: 20px;
+  }
+
+  .quote strong {
+    display: block;
+    margin-top: 12px;
+    font-size: 16px;
+  }
+
+  .ending {
+    margin-top: 30px;
+    padding: 24px;
+    background: #e6f6e7;
+    border-radius: 16px;
+    text-align: center;
+  }
+
+  .ending h3 {
+    margin: 0 0 8px;
+    font-size: 28px;
+  }
+
+  footer {
+    background: #214e31;
+    color: white;
+    text-align: center;
+    padding: 22px;
+    font-size: 14px;
+  }
+
+  @media (max-width: 750px) {
+    .header-inner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    nav a {
+      margin: 0 14px 0 0;
+    }
+
+    h2 {
+      font-size: 32px;
+    }
+
+    .facts,
+    .messages,
+    .mini-gallery {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <div class="brand-icon">🌳</div>
+      <div>
+        <h1>Nature Discovery News</h1>
+        <p>Amazing stories from the natural world</p>
+      </div>
+    </div>
+
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Nature</a>
+      <a href="#">Science</a>
+      <a href="#">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+
+    <span class="tag">NEW DISCOVERY</span>
+
+    <h2>Scientists Say Trees Can Send Text Messages!</h2>
+
+    <p class="intro">
+      Scientists say they have created a new way for trees to send messages to people.
+      Special sensors are placed on the tree to check if it needs water.
+    </p>
+
+    <div class="big-claim">
+      The tree can then choose a message and send it to a phone!
+    </div>
+
+    <img src="1.png"
+         alt="A tree with a sensor sending a message to a phone"
+         class="news-image">
+
+    <div class="caption">
+      A tree sends a message after its sensor checks the soil.
+    </div>
+
+    <div class="section">
+      <h3>📱 What do the trees say?</h3>
+
+      <p>
+        Scientists say trees can choose from different messages.
+      </p>
+
+      <div class="messages">
+        <div class="message-card">
+          “I am thirsty! Please give me some water! 🌳💧”
+        </div>
+
+        <div class="message-card">
+          “It is too hot today. I need some shade! ☀️”
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>🌳 Amazing tree facts</h3>
+
+      <div class="facts">
+
+        <article class="fact">
+          <div class="emoji">💬</div>
+          <h4>50 Messages</h4>
+          <p>Trees can learn up to 50 different messages.</p>
+        </article>
+
+        <article class="fact">
+          <div class="emoji">📲</div>
+          <h4>Phone Alerts</h4>
+          <p>The messages can be sent straight to a mobile phone.</p>
+        </article>
+
+        <article class="fact">
+          <div class="emoji">🌳🌳</div>
+          <h4>Tree to Tree</h4>
+          <p>Some trees can even send messages to other trees.</p>
+        </article>
+
+      </div>
+    </div>
+
+    <div class="mini-gallery">
+
+      <div>
+        <img src="2.png"
+             alt="Dr Holly Wood standing beside a tree"
+             class="news-image">
+
+        <div class="caption">
+          Dr. Holly Wood checks a tree sensor.
+        </div>
+      </div>
+
+      <div>
+        <img src="3.png"
+             alt="Two trees sending messages to each other"
+             class="news-image">
+
+        <div class="caption">
+          Scientists say trees may be able to message each other.
+        </div>
+      </div>
+
+    </div>
+
+    <div class="quote">
+      “Trees have lots to say. We just needed to learn how to listen!”
+      <strong>— Dr. Holly Wood, Tree Communication Scientist</strong>
+    </div>
+
+    <div class="section">
+      <h3>🏫 Could your school tree text you?</h3>
+
+      <p>
+        Scientists hope the technology will be used in schools next year.
+      </p>
+
+      <p>
+        Your school could soon receive messages from trees in the playground!
+      </p>
+    </div>
+
+    <div class="ending">
+      <h3>Would you like a message from a tree?</h3>
+      <p>
+        Scientists say this could be the future of looking after plants.
+      </p>
+    </div>
+
+  </section>
+</main>
+
+<footer>
+  © 2026 Nature Discovery News • Exploring amazing stories from nature
+</footer>
+
+</body>
+</html>
